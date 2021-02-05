@@ -13,12 +13,13 @@ fn main() {
     // wrapping unsigned numbers
     let y: u8 = 1; // 1 as an unsigned 8 bit integer
     // You can also assign it like this.
-    // let mut y =1u8;
+    // let mut y = 1u8;
     // you need to explicitly subtract with wrapping if you're going to do stuff like this.
     println!("y = {}", y.wrapping_sub(2)); // 255
     /*
     The following line will not compile because 255 is the highest you can have with 8 bits
     let too_high: u8 = 256;
+
     error: literal out of range for `u8`
     --> src/main.rs:4:24
     |
