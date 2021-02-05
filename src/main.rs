@@ -10,7 +10,7 @@ fn main() {
     // shadowing: we can reassign `spaces` by initializing a new variable with the same name
     let spaces = spaces.len();
     println!("spaces: {}", spaces);
-    // wrapping usigned numbers
+    // wrapping unsigned numbers
     let y: u8 = 1; // 1 as an unsigned 8 bit integer
     // You can also assign it like this.
     // let mut y =1u8;
@@ -29,16 +29,22 @@ fn main() {
     = note: the literal `256` does not fit into the type `u8` whose range is `0..=255`
     println!("{}", too_high);
     */
+
+    // this is a tuple
     let my_tup: (&str, bool, i32, f64) = ("my tuple", true, 100, 11.3);
     let (name, is_tuple, my_int, my_float) = my_tup;
     println!("name: {}, is_tuple: {}, my_int: {}, my_float: {}", name, is_tuple, my_int, my_float);
-    let the_truth = my_tup.1;
+    // you can also assign variables like this
+    let the_truth = my_tup.1; // true (bool)
     println!("the truth is {}", the_truth);
+
+    // this is an array
     let months = ["January", "February", "March", "April", "May", "June", "July",
         "August", "September", "October", "November", "December"];
     // Prints the second months
     println!("{}", months[1]);
     print!("\nLoop through all the months:\n\n");
+    // if we didn't want the index we would just do `for month in months.iter(){println!("{}", month)}
     for (i, month) in months.iter().enumerate() {
         println!("{}: {}", i + 1, month);
     }
