@@ -6,8 +6,8 @@ fn main() {
     println!("The value of x is {}", x);
     x = x + 1;
     println!("The value of x is {}", x);
-    // shadowing: we reassign `spaces` by initializing a new variable with the same name
     let spaces = "  ";
+    // shadowing: we can reassign `spaces` by initializing a new variable with the same name
     let spaces = spaces.len();
     println!("spaces: {}", spaces);
     // wrapping usigned numbers
@@ -42,4 +42,28 @@ fn main() {
     for (i, month) in months.iter().enumerate() {
         println!("{}: {}", i + 1, month);
     }
+
+    print!("\n");
+    let y = {
+        // this is x is scoped, the x outside is still 7
+        let x = 3;
+        // no semicolon here - this is an expression, not a statement.
+        x + 1
+    };
+    println!("The value of y is {}", y);
+    // call new_function
+    print_two_ints(12, 25);
+    println!("The value of x is still {}", x);
+    let added = add_two_ints(12, 25);
+    println!("12 + 25 = {}", added);
+}
+
+fn print_two_ints(x: i32, y: i32) {
+    println!("The value of x in print_two_ints is {}", x);
+    println!("The value of y in print_two_ints is {}", y);
+}
+
+fn add_two_ints(x: i32, y: i32) -> i32 {
+// no semicolon
+    x + y
 }
